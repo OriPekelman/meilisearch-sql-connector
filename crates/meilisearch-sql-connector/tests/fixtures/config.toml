@@ -1,0 +1,27 @@
+[meilisearch]
+host = "http://localhost:7701"
+
+[database]
+type = "sqlite"
+connection_string = "test.db"
+poll_interval_seconds = 1
+
+[[database.tables]]
+name = "test_table_int"
+primary_key = "id"
+index_name = "test_index_int"
+fields_to_index = ["id", "field1", "field2"]
+watch_for_changes = true
+searchable_attributes = ["field1"]
+ranking_rules = ["exactness", "words", "typo", "proximity", "attribute", "sort"]
+typo_tolerance = { enabled = false }
+
+[[database.tables]]
+name = "test_table_str"
+primary_key = "id"
+index_name = "test_index_str"
+fields_to_index = ["id", "field1", "field2"]
+watch_for_changes = true
+searchable_attributes = ["field1"]
+ranking_rules = ["exactness", "words", "typo", "proximity", "attribute", "sort"]
+typo_tolerance = { enabled = false } 

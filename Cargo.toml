@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/meilisearch-sql-connector",
+]
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Ori Pekelman <ori@pekelman.com>"]
+description = "A SQL database connector for Meilisearch"
+homepage = "https://github.com/yourusername/meilisearch-sql-connector"
+readme = "README.md"
+edition = "2021"
+license = "MIT"
+
+[profile.release]
+codegen-units = 1
+debug-assertions = true  # Enable debug assertions for better error detection
+

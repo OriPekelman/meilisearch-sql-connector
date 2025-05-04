@@ -1,0 +1,173 @@
+[database]
+type = "sqlite"
+connection_string = "/Users/oripekelman/sites/cts/coptic/sqlite3.db"
+poll_interval_seconds = 30
+connection_pool_size = 5
+max_concurrent_batches = 5
+document_batch_size = 100
+
+[[database.tables]]
+name = "django_migrations"
+primary_key = "id"
+fields_to_index = ["id", "app", "name", "applied"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "auth_group_permissions"
+primary_key = "id"
+fields_to_index = ["id", "group_id", "permission_id"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "auth_user_groups"
+primary_key = "id"
+fields_to_index = ["id", "user_id", "group_id"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "auth_user_user_permissions"
+primary_key = "id"
+fields_to_index = ["id", "user_id", "permission_id"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "django_admin_log"
+primary_key = "id"
+fields_to_index = ["id", "action_time", "object_id", "object_repr", "change_message", "content_type_id", "user_id", "action_flag"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "django_content_type"
+primary_key = "id"
+fields_to_index = ["id", "app_label", "model"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "auth_permission"
+primary_key = "id"
+fields_to_index = ["id", "content_type_id", "codename", "name"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "auth_group"
+primary_key = "id"
+fields_to_index = ["id", "name"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "django_session"
+primary_key = "session_key"
+fields_to_index = ["session_key", "session_data", "expire_date"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "texts_htmlvisualizationformat"
+primary_key = "id"
+fields_to_index = ["id", "title", "button_title", "slug"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "texts_text_html_visualizations"
+primary_key = "id"
+fields_to_index = ["id", "text_id", "htmlvisualization_id"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "texts_specialmeta"
+primary_key = "id"
+fields_to_index = ["id", "name", "order", "splittable"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "texts_text_text_meta"
+primary_key = "id"
+fields_to_index = ["id", "text_id", "textmeta_id"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "auth_user"
+primary_key = "id"
+fields_to_index = ["id", "password", "last_login", "is_superuser", "username", "last_name", "email", "is_staff", "is_active", "date_joined", "first_name"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "texts_textmeta"
+primary_key = "id"
+fields_to_index = ["id", "name", "value"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "texts_htmlvisualization"
+primary_key = "id"
+fields_to_index = ["id", "visualization_format_slug", "config", "css"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "texts_corpus"
+primary_key = "id"
+fields_to_index = ["id", "created", "modified", "title", "slug", "annis_corpus_name", "github", "urn_code", "github_paula", "github_relannis", "github_tei", "author", "visualization_formats"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[[database.tables]]
+name = "texts_text"
+primary_key = "id"
+fields_to_index = ["id", "title", "slug", "created", "modified", "corpus_id", "tt_dir", "tt_dir_tree_id", "document_cts_urn", "tt_filename", "content", "order"]
+watch_for_changes = true
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[meilisearch]
+host = "http://localhost:7700"
+api_key = "p5pMufWzFE0UwMYJ4LIc3njt53LL4-Sv0EzCepyqvJU"

@@ -1,0 +1,23 @@
+.idea/
+.vscode/
+/target
+**/*.csv
+**/*.json_lines
+**/*.rs.bk
+/*.mdb
+/data.ms
+/snapshots
+/dumps
+/test_dumps
+/bench
+/_xtask_benchmark.ms
+/benchmarks
+test.db
+crates/meilisearch-sql-connector/tmp/*
+# Snapshots
+## ... large
+*.full.snap
+##  ... unreviewed
+*.snap.new
+
+.DS_Store

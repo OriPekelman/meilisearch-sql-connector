@@ -1,0 +1,48 @@
+[package]
+name = "meilisearch-sql-connector"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A SQL connector for Meilisearch"
+license = "MIT"
+
+[features]
+default = ["sqlite"]
+sqlite = ["sqlx/sqlite"]
+postgres = ["sqlx/postgres"]
+mysql = ["sqlx/mysql"]
+test = ["mockall"]
+
+[dependencies]
+# Core dependencies
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "chrono"] }
+anyhow = "1.0"
+toml = "0.8"
+async-trait = "0.1"
+futures-util = "0.3"
+url = "2.5"
+mockall = { version = "0.11", optional = true }
+
+# Database dependencies
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "json", "time"] }
+
+# Meilisearch dependencies
+meilisearch-sdk = "0.28.0"
+clap = { version = "4.4", features = ["derive"] }
+clap_complete = "4.4"
+clap_mangen = "0.2"
+colored = "2.1"
+
+# Testing dependencies
+[dev-dependencies]
+tokio-test = "0.4"
+test-log = { version = "0.2", features = ["trace"] }
+tempfile = "3.8"
+mockall = "0.11"
+env_logger = "0.11"
+criterion = "0.5" 

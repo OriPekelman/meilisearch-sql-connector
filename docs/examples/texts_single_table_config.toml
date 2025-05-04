@@ -1,0 +1,21 @@
+[database]
+type = "sqlite"
+connection_string = "/Users/oripekelman/sites/cts/coptic/sqlite3.db"
+poll_interval_seconds = 30
+connection_pool_size = 5
+max_concurrent_batches = 5
+document_batch_size = 100
+
+[[database.tables]]
+name = "texts_text"
+primary_key = "id"
+fields_to_index = ["id", "title", "slug", "created", "modified", "corpus_id", "tt_dir", "tt_dir_tree_id", "document_cts_urn", "tt_filename", "content", "order"]
+watch_for_changes = true
+searchable_attributes = ["title", "slug", "content"]
+
+[database.tables.typo_tolerance]
+enabled = true
+
+[meilisearch]
+host = "http://localhost:7700"
+api_key = "p5pMufWzFE0UwMYJ4LIc3njt53LL4-Sv0EzCepyqvJU"
